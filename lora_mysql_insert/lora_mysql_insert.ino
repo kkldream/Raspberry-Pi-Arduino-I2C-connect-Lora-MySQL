@@ -49,18 +49,15 @@ void loop() {
     Serial.print("Received packet '");
 
     // read packet
-    String str = "INSERT INTO robot.test (status,trash,gps) VALUES (";
     while (LoRa.available()) {
-      str += (char)LoRa.read();
+      Serial.print((char)LoRa.read());
     }
-    str += ",'24.745378,121.74488')";
-    Serial.println(str);
-    char INSERT_SQL[str.length()];
-    str.toCharArray(INSERT_SQL,str.length());
-'    // print RSSI of packet
-    Serial.print(" with RSSI ")    Serial.println(LoRa.packetRssi());
+    
+    // print RSSI of packet
+    Serial.print("' with RSSI ");
+    Serial.println(LoRa.packetRssi());
 
-    //char INSERT_SQL[] = "INSERT INTO robot.test (status,trash,gps) VALUES ('Move','1','24.745378,121.74488')";
+    char INSERT_SQL[] = "INSERT INTO robot.test (status,trash,gps) VALUES ('Move','1','24.745378, 121.744880')";
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);  
     cur_mem->execute(INSERT_SQL);//execute SQL
     delete cur_mem;
