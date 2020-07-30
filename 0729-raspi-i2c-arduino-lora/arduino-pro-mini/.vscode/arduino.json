@@ -1,0 +1,6 @@
+{
+    "sketch": "arduino-pro-mini.ino",
+    "board": "arduino:avr:pro",
+    "configuration": "cpu=8MHzatmega328",
+    "port": "COM25"
+}

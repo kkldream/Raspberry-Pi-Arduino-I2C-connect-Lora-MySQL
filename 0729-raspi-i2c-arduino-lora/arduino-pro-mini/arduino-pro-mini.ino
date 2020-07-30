@@ -11,7 +11,7 @@ void setup() {
   Wire.begin(SLAVE_ADDRESS);  // 初始化Arduino的I2C位址
   Wire.onReceive(receiveData); //I2C訊號接收時，啟用函式
   Wire.onRequest(sendData);  //主機要求讀取時，啟用函式
-
+  
   Serial.println("LoRa Sender");
   LoRa.setPins(10, 9, 8);// set NSS, reset, DIO0 pin
   if (!LoRa.begin(433E6)) {

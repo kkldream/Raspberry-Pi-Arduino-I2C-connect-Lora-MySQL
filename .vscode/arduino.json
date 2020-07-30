@@ -1,0 +1,6 @@
+{
+    "board": "esp32:esp32:nodemcu-32s",
+    "configuration": "FlashFreq=80,UploadSpeed=921600",
+    "port": "COM6",
+    "sketch": "0729-raspi-i2c-arduino-lora\\esp32-lora-mysql\\esp32-lora-mysql.ino"
+}
